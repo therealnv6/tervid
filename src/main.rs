@@ -3,7 +3,7 @@ use crossterm::{
     style::{self, Stylize},
     terminal, ExecutableCommand, QueueableCommand, Result,
 };
-use std::{io::{stdout, Write}, thread};
+use std::{io::{stdout, Write}, thread, time::Duration};
 
 fn main() -> Result<()> {
     let mut stdout = stdout();
@@ -30,8 +30,8 @@ fn main() -> Result<()> {
             }
         }
         stdout.flush()?;  
-        thread::sleep_ms(25);
+        thread::sleep(Duration::from_millis(25));
     }
 
-    Ok(())
+    // Ok(())
 }
